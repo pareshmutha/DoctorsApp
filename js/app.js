@@ -61,11 +61,39 @@ $ionicConfigProvider.navBar.alignTitle('center');
     }
   })
   .state('app.complaintDetails', {
-    url: '/complaintDetails:compId',
+    url: '/complaintDetails:compId,:state',
     views: {
       'menuContent': {
         templateUrl: 'templates/complaintDetails.html',
 		controller: 'complaintStatusCtrl'
+      }
+    }
+  })
+
+.state('app.myOutstandings', {
+    url: '/myOutstandings',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/myOutstandings.html',
+		controller: 'myOutstandingCtrl'
+      }
+    }
+  })
+.state('app.requestCertificate', {
+    url: '/requestCertificate',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/requestCertificate.html',
+		controller: 'requestCertificateCtrl'
+      }
+    }
+  })
+.state('app.downloadCertificate', {
+    url: '/downloadCertificate',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/downloadCertificate.html',
+		controller: 'downloadCertificateCtrl'
       }
     }
   })

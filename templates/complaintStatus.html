@@ -18,7 +18,7 @@
 		  <div class="col center">Status</div>
 		</div>
 		<div class="row" ng-repeat="complaint in complaints | filter: compStatus">
-		  <div class="col-10 center"><a  ui-sref="app.complaintDetails({compId:complaint.compId})">{{complaint.compId}}</a></div>
+		  <div class="col-10 center"><a  ui-sref="app.complaintDetails({compId:complaint.compId,state:complaint.status})">{{complaint.compId}}</a></div>
 		  <div class="col center">{{complaint.date}}</div>
 		  <div class="col-33 center">{{complaint.doctor}}</div>
 		  <div class="col center">{{complaint.status}}</div>

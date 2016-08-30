@@ -6,7 +6,7 @@
 	  </ion-nav-buttons>
   </ion-nav-bar>
   <ion-content>
-		<h4 class="clsPageHeader">Pending Complaint Details</h4>
+		<h5 class="clsPageHeader">{{compStatus1}} Complaint Details</h5>
 		<div class="clsComplaintDetails">
 			<div class="row">
 					<div class="col-50">
@@ -58,39 +58,41 @@
 					</div>
 			</div>
 			<div class="clsDivider"></div>
-			<h5 class="clsPageHeader">Doctors Reply with Diagnosis</h5>
-			 <div class="clsTable clsMedTable">
-				<div class="row clsTableHeader clsConstantHeader">
-				  <div class="col center">Medicine Name</div>
-				  <div class="col center">Morning</div>
-				  <div class="col center">Afternoon</div>
-				  <div class="col center">Night</div>
-				  <div class="col center">Days</div>
+			<div class="clsCompDetails" ng-if="showCompDetails">
+				<h5 class="clsPageHeader">Doctors Reply with Diagnosis</h5>
+				 <div class="clsTable clsMedTable">
+					<div class="row clsTableHeader clsConstantHeader">
+					  <div class="col center">Medicine Name</div>
+					  <div class="col center">Morning</div>
+					  <div class="col center">Afternoon</div>
+					  <div class="col center">Night</div>
+					  <div class="col center">Days</div>
+					</div>
+					<div class="row clsTableHeader">
+					  <div class="col center">Nicip</div>
+					  <div class="col center clsTableicons"><i class="icon ion-ios-checkmark-outline"></i></div>
+					  <div class="col center clsTableicons"><i class="ion-ios-close-outline"></i></div>
+					  <div class="col center clsTableicons"><i class="icon ion-ios-checkmark-outline"></i></div>
+					  <div class="col center clsDays">02</div>
+					</div>
+					<div class="row clsTableHeader">
+					  <div class="col center">Combiflame</div>
+					  <div class="col center clsTableicons"><i class="icon ion-ios-checkmark-outline"></i></div>
+					  <div class="col center clsTableicons"><i class="ion-ios-close-outline"></i></div>
+					  <div class="col center clsTableicons"><i class="icon ion-ios-checkmark-outline"></i></div>
+					  <div class="col center clsDays">02</div>
+					</div>
 				</div>
-				<div class="row clsTableHeader">
-				  <div class="col center">Nicip</div>
-				  <div class="col center clsTableicons"><i class="icon ion-ios-checkmark-outline"></i></div>
-				  <div class="col center clsTableicons"><i class="ion-ios-close-outline"></i></div>
-				  <div class="col center clsTableicons"><i class="icon ion-ios-checkmark-outline"></i></div>
-				  <div class="col center clsDays">02</div>
-				</div>
-				<div class="row clsTableHeader">
-				  <div class="col center">Combiflame</div>
-				  <div class="col center clsTableicons"><i class="icon ion-ios-checkmark-outline"></i></div>
-				  <div class="col center clsTableicons"><i class="ion-ios-close-outline"></i></div>
-				  <div class="col center clsTableicons"><i class="icon ion-ios-checkmark-outline"></i></div>
-				  <div class="col center clsDays">02</div>
-				</div>
+				<div class="row clsTestRow"><div class="col-20">Lab Test:</div><div class="col-67">Lipid,Blood,Sugar</div></div>
+				<div class="row clsFees"><div class="col-33">Fees Charged:</div><div class="col-67">500/- (Five Hundred Rupees only)</div></div>
+				<label class="item item-input item-floating-label clsNoPadMar">
+					<span class="input-label ">Reply</span>
+					<input type="text" class="clsPlaceholder" style="padding:5%" placeholder="Reply to Doctor"/>
+				</label>
+				<button class="button button-full clsCompBtn">
+				 SUBMIT
+				</button>
 			</div>
-			<div class="row clsTestRow"><div class="col-20">Lab Test:</div><div class="col-67">Lipid,Blood,Sugar</div></div></div>
-			<div class="row clsFees"><div class="col-33">Fees Charged:</div><div class="col-67">500/- (Five Hundred Rupees only)</div></div></div>
-			<label class="item item-input item-floating-label clsNoPadMar">
-				<span class="input-label ">Reply</span>
-				<input type="text" class="clsPlaceholder clsNoPadMar" placeholder="Reply to Doctor"/>
-			</label>
-			<button class="button button-full clsCompBtn">
-			 SUBMIT
-			</button>
 		</div>
 	
   </ion-content>

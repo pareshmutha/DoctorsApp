@@ -1,7 +1,12 @@
 angular.module('patientApp')
 
 .controller('complaintStatusCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$stateParams) {
-	//alert($stateParams.compId)
+	$scope.compStatus1=$stateParams.state;
+	if($stateParams.state =="Pending"){
+		$scope.showCompDetails=false;
+	}else{
+		$scope.showCompDetails=true;
+	}
 	$scope.complaints=[
 		{compId:"ID01",date:"22/08/2016",doctor:"Dr. Mahtre",status:"Pending"},
 		{compId:"ID02",date:"22/08/2016",doctor:"Dr. Despande",status:"Completed"},
