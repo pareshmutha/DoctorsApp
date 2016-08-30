@@ -222,33 +222,44 @@ ion-header-bar .title,ion-header-bar .header-item{
 	font-weight:bold;
 }
 .clsTestRow{
-	font-size:12px;
-	color:purple;
-	border-bottom:1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+    background: #ddd;
+    font-weight: 500;
 }
 .clsFees{
 	font-size:13px;
 	color:red;
 	border-bottom:1px solid #ddd;
 	font-weight:500;
+	padding-top:5px !important;
 }
 .clsNoPadMar{
 	padding:0!important;
 	margin:0!important;
 }
 .clsCompBtn{
-	margin: 0 auto;
-    padding: 0;
-    line-height: 1.7!important;
-    /* max-width: 44px; */
-    width: 133px!important;
-    margin-top: 8px!important;
 	border-color: transparent;
     background-color: #51c5d0;
     color: #fff;
-	border-radius:5px;
-	min-height:20px!important;
+	margin:0 auto;
+    margin-top: 5% !important;
+    border-radius: 5px!important;
+	cursor:pointer;
+	width:80%!important;
 }
 .clsConstantHeader{
 	border-top:1px solid #ddd;
+}
+.clsNil{
+	color: #d22b2b;
+    font-weight: 500;
+}
+.clsBold{
+	font-weight: 500;
+}
+.clsDate{
+	display: inline-block;
+    position: absolute;
+    top: 5%;
+    right: 0;
 }
