@@ -1,0 +1,20 @@
+<ion-modal-view class="loginModal">
+  <ion-content>
+    <div class="clsLoginContainer">
+		<div class="title clsLogintitle">Welcome</div>
+		<div class="clsInputRow">
+			<div class="clsUserRow">
+				<i class="fa fa-user clsloginicon" aria-hidden="true"></i>
+				<input type="text" class="clsLoginInput" name="Username" placeholder="Username" required="">
+			</div>
+			<div class="clsUserRow">
+			<i class="fa fa-key clsloginicon" aria-hidden="true"></i></i><input type="{{inputType}}"" class="clsLoginInput" name="Password" placeholder="Password" required=""><i class="fa fa-eye clsShowPass" ng-click="showPass()" aria-hidden="true"></i>
+			</div>
+			<button ng-click="login()" class="button button-full clsLoginBtn">
+			 LOG IN
+			</button>
+			<div class="clsforgotPass" ng-click="forgotPass()">Forgot password?</div>
+		</div>
+	</div>
+  </ion-content>
+</ion-modal-view>

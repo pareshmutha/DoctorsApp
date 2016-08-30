@@ -1,0 +1,30 @@
+<ion-view view-title="Complaint Status">
+ <ion-nav-bar class="clsViewHeader">
+	  <ion-nav-buttons side="left">
+	   <!-- Toggle left side menu -->
+	    <button menu-toggle="left" class="button button-icon icon ion-navicon clsMenuBtn"></button>
+	  </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+	<div class="button-bar clsComplainBtn">
+	  <a class="button" ng-class="{'active':selectedTab === 'Pending'}" ng-click="complaintStatus()">Pending</a>
+	  <a class="button" ng-class="{'active':selectedTab === 'Completed'}" ng-click="complaintStatus()">Completed</a>
+	</div>
+	<div class="clsTable">
+		<div class="row">
+		  <div class="col-10 center">ID</div>
+		  <div class="col center">Date</div>
+		  <div class="col-33 center">Doctor</div>
+		  <div class="col center">Status</div>
+		</div>
+		<div class="row" ng-repeat="complaint in complaints | filter: compStatus">
+		  <div class="col-10 center"><a  ui-sref="app.complaintDetails({compId:complaint.compId})">{{complaint.compId}}</a></div>
+		  <div class="col center">{{complaint.date}}</div>
+		  <div class="col-33 center">{{complaint.doctor}}</div>
+		  <div class="col center">{{complaint.status}}</div>
+		</div>
+		
+	</div>
+	
+  </ion-content>
+</ion-view>

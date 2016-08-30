@@ -1,0 +1,11 @@
+  //add event listener to handle Android hardware back button
+      //to close the app while user is on main page and logged in
+      //to prevent login controller redirecting back to loading page
+      var deregister = $ionicPlatform.registerBackButtonAction(
+        function () {
+          if($state.is('app.main-page')) {
+            ionic.Platform.exitApp();
+          }
+        }, 101
+      );
+      $scope.$on('$destroy', deregister);
