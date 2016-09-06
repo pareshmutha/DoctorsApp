@@ -53,7 +53,9 @@ $ionicConfigProvider.navBar.alignTitle('center');
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html'
+    templateUrl: 'templates/menu.html',
+	controller: 'menuCtrl'
+	
     
   })
 

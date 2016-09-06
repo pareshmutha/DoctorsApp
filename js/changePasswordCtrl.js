@@ -22,7 +22,7 @@ angular.module('patientApp')
 			}
 			$http(req).then(function(res){
 				if(res.data.IsSaved ==false){
-					alert("Old Password is Wrong");
+					alert(res.data.Message);
 					return;
 				}
 				else{

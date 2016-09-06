@@ -34,16 +34,16 @@ angular.module('patientApp')
 		console.log(register);
 		
 		 var req = {
-		 method: 'POST',
-		 url: 'http://clinicapp.waghmaredd.com/patients/register',
-		 data: register
+			 method: 'POST',
+			 url: 'http://clinicapp.waghmaredd.com/patients/register',
+			 data: register
 		}
 	    $http(req).then(function(res){
 			if(res.data.IsSaved == true){
 				$state.go('OTP', { 'mobilenumber':register.mobilenumber});
 			}
 			else{
-				alert("User Already Registered");
+				alert(res.data.Message);
 				register={};
 				return;
 			}

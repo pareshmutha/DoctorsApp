@@ -18,13 +18,13 @@ angular.module('patientApp')
 			}
 			$http(req).then(function(res){
 				if(res.data.Message !="Login successfully"){
-					alert("Wrong Credentials");
+					alert(res.data.Message);
 					return;
 				}
 				if(res.data.IsSaved == true && res.data.Data.IsMobileVerified==false){
 					$state.go('OTP', { 'mobilenumber':res.data.Data.UserName });
 				}
-				else if(res.data.IsSaved == true && res.data.Data.ChangePassword==false){
+				else if(res.data.IsSaved == true && res.data.Data.ChangePassword==true){
 					$state.go('changePassword',{'username':res.data.Data.UserName});
 				}
 				else{

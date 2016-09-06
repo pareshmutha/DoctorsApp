@@ -22,7 +22,7 @@ angular.module('patientApp')
 				$state.go('app.newComplaint');
 			}
 			else{
-				alert("Wrong OTP Entered");
+				alert(res.data.Message);
 				optDetails={};
 				return;
 			}

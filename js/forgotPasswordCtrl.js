@@ -21,7 +21,7 @@ angular.module('patientApp')
 				$state.go('login');
 			}
 			else{
-				alert("Wrong Mobile Number.");
+				alert(res.data.Message);
 				return;
 			}
 		}, function(res){
