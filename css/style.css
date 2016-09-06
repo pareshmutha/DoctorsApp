@@ -68,6 +68,16 @@
 	width:80%!important;
 	
 }
+.clsNewUserBtn{
+	border-color: transparent;
+    background-color: #51c5d0;
+    color: #fff;
+	margin:0 auto;
+    border-radius: 5px!important;
+	cursor:pointer;
+	width:80%!important;
+	
+}
 .clsRegisterBtn{
 	border-color: transparent;
     background-color: #51c5d0;

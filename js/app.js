@@ -31,14 +31,14 @@ $ionicConfigProvider.navBar.alignTitle('center');
 		controller: 'loginCtrl'
     })
 	.state('changePassword', {  
-		url: '/changePassword',
+		url: '/changePassword:username',
 		templateUrl: 'templates/changePassword.html',
-		controller: 'loginCtrl'
+		controller: 'changePasswordCtrl'
     })
 	.state('forgotPassword', {  
 		url: '/forgotPassword',
 		templateUrl: 'templates/forgotPassword.html',
-		controller: 'loginCtrl'
+		controller: 'forgotPasswordCtrl'
     })
 	.state('OTP', {  
 		url: '/otp:mobilenumber',
@@ -53,8 +53,8 @@ $ionicConfigProvider.navBar.alignTitle('center');
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    templateUrl: 'templates/menu.html'
+    
   })
 
   .state('app.newComplaint', {
@@ -115,5 +115,5 @@ $ionicConfigProvider.navBar.alignTitle('center');
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/register');
+  $urlRouterProvider.otherwise('/login');
 });

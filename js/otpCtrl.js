@@ -1,6 +1,6 @@
 angular.module('patientApp')
 
-.controller('otpCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$stateParams) {
+.controller('otpCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$stateParams,$http,$state) {
 	var mobielnumber=$stateParams.mobilenumber;
 	$scope.sendOtp=function(optdet){
 		if(typeof optdet == "undefined"){
@@ -8,8 +8,8 @@ angular.module('patientApp')
 			return;
 		}
 		var optDetails={
-			mobilenumber:mobielnumber,
-			OTP:optdet
+			'mobilenumber':mobielnumber,
+			'OTP':optdet
 			}
 
 		 var req = {

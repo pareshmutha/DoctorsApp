@@ -5,13 +5,16 @@
 		<div class="clsInputRow">
 			<div class="clsUserRow">
 				<i class="fa fa-user clsloginicon" aria-hidden="true"></i>
-				<input type="text" class="clsLoginInput" name="Username" placeholder="Username" required="">
+				<input type="text" class="clsLoginInput" ng-model="user.username" name="Username" placeholder="Username" required="">
 			</div>
 			<div class="clsUserRow">
-			<i class="fa fa-key clsloginicon" aria-hidden="true"></i></i><input type="{{inputType}}"" class="clsLoginInput" name="Password" placeholder="Password" required=""><i class="fa fa-eye clsShowPass" ng-click="showPass()" aria-hidden="true"></i>
+			<i class="fa fa-key clsloginicon" aria-hidden="true"></i></i><input type="{{inputType}}"" class="clsLoginInput" ng-model="user.password" name="Password" placeholder="Password" required=""><i class="fa fa-eye clsShowPass" ng-click="showPass()" aria-hidden="true"></i>
 			</div>
-			<button ng-click="login()" class="button button-full clsLoginBtn">
+			<button ng-click="login(user)" class="button button-full clsLoginBtn">
 			 LOG IN
+			</button>
+			<button ng-click="newUser()" class="button button-full clsNewUserBtn">
+			 New User?
 			</button>
 			<div class="clsforgotPass" ng-click="forgotPass()">Forgot password?</div>
 		</div>
