@@ -32,15 +32,15 @@ angular.module('patientApp')
 		}
 		
 		console.log(register);
-		$state.go('OTP', { 'mobilenumber':register.mobilenumber});
-		 /*var req = {
+		
+		 var req = {
 		 method: 'POST',
-		 url: 'http://clinicapp.waghmaredd.com/patients/login',
-		 data: loginData
+		 url: 'http://clinicapp.waghmaredd.com/patients/register',
+		 data: register
 		}
 	    $http(req).then(function(res){
 			if(res.data.IsSaved == true){
-				$state.go('toState', { 'referer':'jimbob', 'param2':37, 'etc':'bluebell' });
+				$state.go('OTP', { 'mobilenumber':register.mobilenumber});
 			}
 			else{
 				alert("User Already Registered");
@@ -49,7 +49,7 @@ angular.module('patientApp')
 			}
 		}, function(res){
 			
-		});*/
+		});
 	}
 	
 	  
