@@ -1,4 +1,3 @@
-
 angular.module('patientApp', ['ionic'])
 
 .run(function($ionicPlatform) {
@@ -18,6 +17,12 @@ angular.module('patientApp', ['ionic'])
 })
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+
+/*
+	Set the Base url using Restangular
+*/
+//RestangularProvider.setBaseUrl("http://clinicapp.waghmaredd.com/patients");
+
 $ionicConfigProvider.navBar.alignTitle('center');
   $stateProvider
    .state('login', {  
@@ -34,6 +39,16 @@ $ionicConfigProvider.navBar.alignTitle('center');
 		url: '/forgotPassword',
 		templateUrl: 'templates/forgotPassword.html',
 		controller: 'loginCtrl'
+    })
+	.state('OTP', {  
+		url: '/otp:mobilenumber',
+		templateUrl: 'templates/otp.html',
+		controller: 'otpCtrl'
+    })
+	.state('register', {  
+		url: '/register',
+		templateUrl: 'templates/register.html',
+		controller: 'registerCtrl'
     })
     .state('app', {
     url: '/app',
@@ -100,5 +115,5 @@ $ionicConfigProvider.navBar.alignTitle('center');
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/register');
 });

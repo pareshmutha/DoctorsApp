@@ -1,0 +1,39 @@
+<ion-modal-view class="loginModal">
+  <ion-content>
+	  <form name="refForm">
+		<div class="clsLoginContainer">
+			<div class="title clsRegistertitle">New User</div>
+			<div class="clsRegisterRow">
+				<div class="clsUserRow">
+					<i class="fa ion-iphone clsloginicon" aria-hidden="true"></i>
+					<input type="text" class="clsLoginInput" ng-model="register.mobilenumber" name="Username" placeholder="Username"  maxlength="10" required>
+				</div>
+				<div class="clsUserRow">
+					<i class="fa fa-user clsloginicon" aria-hidden="true"></i>
+					<input type="text" class="clsLoginInput" ng-model="register.firstname" name="fname" placeholder="First Name" required>
+				</div>
+				<div class="clsUserRow">
+					<i class="fa fa-user clsloginicon" aria-hidden="true"></i>
+					<input type="text" class="clsLoginInput" ng-model="register.lastname" name="lname" placeholder="Last Name" required>
+				</div>
+				<div class="clsUserRow">
+					<i class="fa ion-ios-email-outline clsloginicon" aria-hidden="true"></i></i><input type="email" ng-model="register.email" class="clsLoginInput" name="email" placeholder="Email" required>
+				</div>
+				<div class="clsUserRow">
+				  <i class="fa fa-key clsloginicon" aria-hidden="true"></i></i><input type="password" ng-model="register.password" class="clsLoginInput" name="Password" placeholder="Password"  required><i class="fa fa-eye clsShowPass"  aria-hidden="true"></i>
+				</div>
+				<div class="clsUserRow">
+				  <i class="fa fa-key clsloginicon" aria-hidden="true"></i></i><input type="password" class="clsLoginInput" ng-model="repass" name="rePassword" placeholder="Re-type Password"  required><i class="fa fa-eye clsShowPass"  aria-hidden="true"></i>
+				</div>
+				<div class="clsRegisterInfo">
+					<p>* Username must be an Mobile Number</p>
+					<p>* Minimum 8 Character Password </p>
+				</div>
+				<button class="button button-full clsRegisterBtn" ng-click="registerUser(register,repass)">
+				 SUBMIT
+				</button>
+			</div>
+		</div>
+	 </form>
+  </ion-content>
+</ion-modal-view>

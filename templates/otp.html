@@ -1,0 +1,19 @@
+<ion-modal-view class="loginModal">
+  <ion-content>
+    <div class="clsLoginContainer">
+		<div class="title clsLogintitle">Enter OTP</div>
+		<div class="clsInputRow">
+			<div class="clsUserRow">
+				<i class="fa fa-mobile-phone clsloginicon" aria-hidden="true"></i>
+				<input type="number" class="clsLoginInput" ng-model="optdetails" name="Username" placeholder="Enter OTP" required="">
+			</div>
+			<div class="clsforgotPass">*Enter OTP sent to your mail/mobile number to verify.</div>
+			<button ng-click="sendOtp(optdetails)" class="button button-full clsLoginBtn">
+			 Verify
+			</button>
+			
+			
+		</div>
+	</div>
+  </ion-content>
+</ion-modal-view>

@@ -12,9 +12,19 @@
     color: #fff;
     padding-top: 30%;
 }
+.clsRegistertitle{
+	text-align: center;
+    font-size: 27px;
+    color: #fff;
+    padding-top: 10%;
+}
 .clsInputRow{
 	padding: 1em 1.5em;
     margin-top:20%;
+}
+.clsRegisterRow{
+	padding: 1em 1.5em;
+    margin-top:5%;
 }
 .clsLoginInput{
 	background: 0;
@@ -53,6 +63,17 @@
     color: #fff;
 	margin:0 auto;
     margin-top: 32% !important;
+    border-radius: 5px!important;
+	cursor:pointer;
+	width:80%!important;
+	
+}
+.clsRegisterBtn{
+	border-color: transparent;
+    background-color: #51c5d0;
+    color: #fff;
+	margin:0 auto;
+    margin-top: 10% !important;
     border-radius: 5px!important;
 	cursor:pointer;
 	width:80%!important;
@@ -262,4 +283,9 @@ ion-header-bar .title,ion-header-bar .header-item{
     position: absolute;
     top: 5%;
     right: 0;
+}
+.clsRegisterInfo{
+    color: #ccc;
+    padding-top: 18px;
+    font-size: 13px;
 }
