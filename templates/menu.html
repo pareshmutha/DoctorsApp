@@ -16,7 +16,12 @@
     <ion-content class="clsMenuBody">
 	 <div class="clsUserProfile">
 	 <div class="clsProfileEdit pull-right" ng-click="logout()">Logout</div>
-		<div class="clsProfileImg"></div>
+		
+			
+		<ion-item  menu-close ui-sref="app.profile" class="clsMenuProfile">
+			<div class="clsProfileImg"></div>
+        </ion-item>
+		
 		
 		<div class="clsProfileTxt list">
 			  <ion-item ng-click="showLogoutbtn()" class="clsUserName">

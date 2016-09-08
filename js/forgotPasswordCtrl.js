@@ -1,6 +1,6 @@
 angular.module('patientApp')
 
-.controller('forgotPasswordCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$http,$state) {
+.controller('forgotPasswordCtrl', function($scope,$http,$state) {
 	$scope.sendPass=function(mobilenumber){
 		if(typeof mobilenumber == "undefined"){
 			alert("Please Enter Mobile Number");
@@ -9,7 +9,7 @@ angular.module('patientApp')
 		var forgotDetails={
 			'contactnumber':mobilenumber
 			}
-
+			
 		 var req = {
 		 method: 'POST',
 		 url: 'http://clinicapp.waghmaredd.com/patients/forgotpassword',
@@ -17,7 +17,7 @@ angular.module('patientApp')
 		}
 	    $http(req).then(function(res){
 			if(res.data.IsSaved == true){
-				alert("Password Sent.")
+				alert(res.data.Message);
 				$state.go('login');
 			}
 			else{

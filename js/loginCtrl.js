@@ -11,6 +11,7 @@ angular.module('patientApp')
 				alert("Please Enter All values!");
 				return;
 			}	
+			
 			var req = {
 			 method: 'POST',
 			 url: 'http://clinicapp.waghmaredd.com/patients/login',

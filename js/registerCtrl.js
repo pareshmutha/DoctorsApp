@@ -1,6 +1,9 @@
 angular.module('patientApp')
 
-.controller('registerCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$http,$state) {
+.controller('registerCtrl', function($scope,$http,$state) {
+	$scope.login=function(){
+		$state.go('login');
+	}
 	$scope.registerUser=function(register,repass){
 		if(typeof register == "undefined"){
 			alert("Please Enter All values!");
@@ -31,7 +34,6 @@ angular.module('patientApp')
 			return;
 		}
 		
-		console.log(register);
 		
 		 var req = {
 			 method: 'POST',

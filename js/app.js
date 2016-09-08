@@ -58,7 +58,37 @@ $ionicConfigProvider.navBar.alignTitle('center');
 	
     
   })
-
+	.state('app.dashboard', {
+		url: '/dashboard',
+		views: {
+		  'menuContent': {
+			templateUrl: 'templates/dashboard.html',
+			controller: 'menuCtrl'
+		  }
+		}
+		
+		
+	  })
+	  .state('app.profile', {
+		url: '/profile',
+		views: {
+		  'menuContent': {
+			templateUrl: 'templates/profile.html',
+			controller: 'menuCtrl'
+		  }
+		}
+		
+		
+	  })
+	 .state('app.changePassword', {
+    url: '/profileChangePassword',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/profileChangePassword.html',
+		controller: 'changePasswordCtrl'
+      }
+    }
+  })
   .state('app.newComplaint', {
     url: '/newComplaint',
     views: {

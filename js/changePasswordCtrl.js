@@ -14,6 +14,7 @@ angular.module('patientApp')
 			alert("Password and Retype password Does't match!")
 			return;
 		}
+		
 		changepass.username=username;
 		var req = {
 			 method: 'POST',
@@ -26,7 +27,7 @@ angular.module('patientApp')
 					return;
 				}
 				else{
-					$state.go('app.newComplaint');	
+					$state.go('app.dashboard');	
 				}
 			}, function(res){
 				
