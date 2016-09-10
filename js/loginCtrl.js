@@ -29,7 +29,7 @@ angular.module('patientApp')
 					$state.go('changePassword',{'username':res.data.Data.UserName});
 				}
 				else{
-					$state.go('app.newComplaint');	
+					$state.go('app.dashboard');	
 				}
 			}, function(res){
 				

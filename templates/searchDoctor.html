@@ -1,0 +1,47 @@
+<ion-view view-title="My Profile">
+  <ion-nav-bar class="clsViewHeader">
+	  <ion-nav-buttons side="left">
+	  <button class="button button-icon icon ion-chevron-left clsMenuBtn" ng-click="goBack()">Back</button>
+	  </ion-nav-buttons>
+	  <ion-nav-buttons side="right">
+	   <!-- Toggle left side menu -->
+	    <button class="button button-icon clsMenuBtn" ng-if="!showSelectOptions" ng-click="showSelect()">Select</button>
+	  </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+   <div class="row">
+	<div class="col padding">
+	 <input type="text" ng-model="Search.Pincode" class="clsPlaceholder" placeholder="Type Pincode to filter...">
+	</div>
+	
+   </div>
+	<div class="clsTable clsSearchDocList">
+		<div class="row">
+		  <div class="col center clsBold">Doctor</div>
+		  <div class="col center clsBold">Mobile No.</div>
+		  <div class="col center clsBold">Area</div>
+		  <div class="col center clsBold">Pincode</div>
+		</div>
+		<ion-list show-delete="showSelectOptions">
+		
+			<ion-item type="item-text-wrap" ng-repeat="doc in vm.docList.Entities | filter:Search">
+				 <ion-delete-button class="ion-checkbox">
+					<ion-checkbox ng-model="vm.SelectedDocId" ng-true-value="'{{doc.RegistrationNo}}'" ng-false-value=""></ion-checkbox>
+				</ion-delete-button>
+				<div class="row">
+				  <div class="col center">{{doc.Name}}<span ng-if="!doc.Name">NA</span></div>
+				  <div class="col center">{{doc.ContactNumber}}<span ng-if="!doc.ContactNumber">NA</span></div>
+				  <div class="col center">{{doc.Area}}<span ng-if="!doc.Area">NA</span></div>
+				  <div class="col center">{{doc.Pincode}}<span ng-if="!doc.Pincode">NA</span></div>
+				</div>
+			</ion-item>
+		
+		</ion-list>
+	</div>
+	
+  </ion-content>
+  <div ng-show="showSelectOptions">
+	   <button class="button button-icon icon ion-checkmark-circled clsCheckMarkBtn larger"></button>
+	   <button class="button button-icon icon ion-close-circled clsCancelBtn larger" ng-click="cancel()"></button>
+   <div>
+</ion-view>

@@ -144,7 +144,24 @@ $ionicConfigProvider.navBar.alignTitle('center');
       }
     }
   })
-
+	.state('app.viewDoctor', {
+    url: '/viewDoctor',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/viewDoctor.html',
+		controller: 'viewDoctorCtrl'
+      }
+    }
+  })
+.state('app.searchDoctor', {
+    url: '/searchDoctor',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/searchDoctor.html',
+		controller: 'searchDoctorCtrl as vm'
+      }
+    }
+  })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');

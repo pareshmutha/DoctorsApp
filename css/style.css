@@ -101,6 +101,26 @@
 	width:80%!important;
 	
 }
+.clsSearchDocBtn{
+	border-color: transparent;
+    background-color: #51c5d0;
+    color: #fff;
+	margin:0 auto;
+    border-radius: 5px!important;
+	min-height: 35px!important;
+    line-height: 1;
+	
+}
+.clsSubmitBtn{
+	border-color: transparent;
+    background-color: #51c5d0;
+    color: #fff;
+	margin:0 auto;
+    margin-top: 10% !important;
+    border-radius: 5px!important;
+	cursor:pointer;
+	width:80%!important;
+}
 .clsforgotPass{
 	text-align: center;
     /*color: #e5e5e5;*/
@@ -311,4 +331,35 @@ ion-header-bar .title,ion-header-bar .header-item{
 }
 .clsMenuProfile{
 	border:0;
+}
+.clsSearchDocList .item-left-editable .item-content{
+	padding:0px !important;
+}
+.select_button{
+	color: #fff!important;
+    font-weight: 400!important;
+}
+.ion-checkbox .item{
+	border-width:0px!important;
+}
+.item-left-edit .button.icon{
+	padding:0px;
+	left:-6px;
+}
+.clsCheckMarkBtn{
+	z-index: 99;
+    position: absolute;
+    color: #51c5d0;
+    bottom: 44px;
+    left: 30%;
+}
+.clsCancelBtn{
+	z-index: 99;
+    position: absolute;
+    color: red;
+    bottom: 44px;
+    left: 55%;
+}
+.larger:before{
+	font-size:50px !important;
 }
