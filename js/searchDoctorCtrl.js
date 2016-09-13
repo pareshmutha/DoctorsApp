@@ -4,8 +4,9 @@ angular.module('patientApp')
 	var vm =this;
 	$scope.showSelectOptions=false;
 	/*vm.docList={"HasNext":false,"HasPrevious":false,"Count":1,"Entities":[{"RegistrationNo":"7857895","Name":"santosh","ClinicName":"hestq","Qualification":"gfjfj","DoctorSpecialityId":1,"Experience":"fgjf","Address":"jgkjgh","Area":null,"City":null,"Pincode":6758,"ContactNumber":null,"MobileNumber":"810824111","Email":"santoshtk2003@gmail.com","Website":null,"Subscription":null,"Id":2,"Active":true},{"RegistrationNo":"7857898","Name":"Suresh","ClinicName":"hestq","Qualification":"gfjfj","DoctorSpecialityId":1,"Experience":"fgjf","Address":"jgkjgh","Area":null,"City":null,"Pincode":411044,"ContactNumber":null,"MobileNumber":"810824111","Email":"santoshtk2003@gmail.com","Website":null,"Subscription":null,"Id":2,"Active":true}],"FinalAmount":0.0,"Message":"Records found!"};*/
-	
+	var requestDoc={};
 	 vm.SelectedDocId = 'none';
+	 var patientId=localStorage.getItem("patientId");
 	$scope.loadDocList=function(){
 		 var req = {
 		 method: 'GET',
@@ -19,6 +20,26 @@ angular.module('patientApp')
 		
 	} 
 	$scope.loadDocList();
+	$scope.sendDocRequest=function(){
+		if(vm.SelectedDocId == "none" || vm.SelectedDocId == undefined){
+			alert("Please Select atleast One Doctor");
+			return;
+		}
+		requestDoc.doctorId=vm.SelectedDocId;
+		requestDoc.patientId=patientId;
+		var req = {
+			 method: 'POST',
+			 url: 'http://clinicapp.waghmaredd.com/patients/connectdoctor',
+			 data: requestDoc
+			}
+	    $http(req).then(function(res){
+		    alert(res.data.Message);
+			$ionicHistory.goBack();		
+		}, function(res){
+			
+		});
+	}
+	
 	$scope.goBack=function(){
 		$ionicHistory.goBack();
 	}
@@ -28,34 +49,7 @@ angular.module('patientApp')
 	$scope.showSelect=function(){
 		$scope.showSelectOptions=true;
 	}
-	$scope.sendOtp=function(optdet){
-		if(typeof optdet == "undefined"){
-			alert("Please Enter OTP");
-			return;
-		}
-		var optDetails={
-			'mobilenumber':mobielnumber,
-			'OTP':optdet
-			}
-
-		 var req = {
-		 method: 'POST',
-		 url: 'http://clinicapp.waghmaredd.com/patients/VerifyOTP',
-		 data: optDetails
-		}
-	    $http(req).then(function(res){
-			if(res.data.IsSaved == true){
-				$state.go('app.newComplaint');
-			}
-			else{
-				alert(res.data.Message);
-				optDetails={};
-				return;
-			}
-		}, function(res){
-			
-		});
-	}
+	
 })
 
 

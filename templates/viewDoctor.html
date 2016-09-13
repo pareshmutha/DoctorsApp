@@ -13,18 +13,14 @@
 		  <div class="col center clsBold">Area</div>
 		  <div class="col center clsBold">Pincode</div>
 		</div>
-		<div class="row">
-		  <div class="col center">Dr. Shah</div>
-		  <div class="col center">1234567890</div>
-		  <div class="col center">Nigdi</div>
-		  <div class="col center">41044</div>
+		<div class="row" ng-if="!docorsList">No Doctors in your list</div>
+		<div class="row" ng-repeat="doc in docorsList">
+		  <div class="col center">{{doc.docName}}</div>
+		  <div class="col center">{{doc.contactno}}</div>
+		  <div class="col center">{{doc.area}}</div>
+		  <div class="col center">{{doc.pincode}}</div>
 		</div>
-		<div class="row">
-		  <div class="col center">Dr. Shah</div>
-		  <div class="col center">1234567890</div>
-		  <div class="col center">Nigdi</div>
-		  <div class="col center">41044</div>
-		</div>
+		
 		
 	</div>
 	<button class="button button-full clsSubmitBtn" ng-click="searchDoctor()">

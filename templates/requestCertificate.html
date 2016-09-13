@@ -14,25 +14,25 @@
 	   <a class="item">
 	    From Date:
 		<div class="clsDate">
-			<input id="date" type="date" name="date" >
+			<input id="date" ng-model="cer.fromDate" type="date" name="date" >
 		</div>
 		
 	  </a>
 	   <a class="item">
 	    To Date:
 		<div class="clsDate">
-			<input id="date" type="date" name="date" >
+			<input id="date" ng-model="cer.toDate" type="date" name="date" >
 		</div>
 		
 	  </a>
 	 <label class="item item-input item-floating-label">
 		<span class="input-label">Description</span>
-		<textarea type="text" class="clsPlaceholder" placeholder="Description"></textarea>
+		<textarea type="text" ng-model="cer.description" class="clsPlaceholder" placeholder="Description"></textarea>
 	</label>
 	
 	
 	</div>
-	<button class="button button-full clsFormBtn">
+	<button class="button button-full clsFormBtn" ng-click="sendCertificateReq(cer)">
 			 SUBMIT
 	</button>
   </ion-content>

@@ -26,7 +26,7 @@
 		
 			<ion-item type="item-text-wrap" ng-repeat="doc in vm.docList.Entities | filter:Search">
 				 <ion-delete-button class="ion-checkbox">
-					<ion-checkbox ng-model="vm.SelectedDocId" ng-true-value="'{{doc.RegistrationNo}}'" ng-false-value=""></ion-checkbox>
+					<ion-checkbox ng-model="vm.SelectedDocId" ng-true-value="'{{doc.Id}}'" ng-false-value=""></ion-checkbox>
 				</ion-delete-button>
 				<div class="row">
 				  <div class="col center">{{doc.Name}}<span ng-if="!doc.Name">NA</span></div>
@@ -41,7 +41,7 @@
 	
   </ion-content>
   <div ng-show="showSelectOptions">
-	   <button class="button button-icon icon ion-checkmark-circled clsCheckMarkBtn larger"></button>
+	   <button class="button button-icon icon ion-checkmark-circled clsCheckMarkBtn larger" ng-click="sendDocRequest()"></button>
 	   <button class="button button-icon icon ion-close-circled clsCancelBtn larger" ng-click="cancel()"></button>
    <div>
 </ion-view>

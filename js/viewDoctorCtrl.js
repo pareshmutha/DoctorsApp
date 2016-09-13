@@ -4,16 +4,7 @@ angular.module('patientApp')
 	$scope.searchDoctor=function(){
 		$state.go('app.searchDoctor');
 	}
-	$scope.sendOtp=function(optdet){
-		if(typeof optdet == "undefined"){
-			alert("Please Enter OTP");
-			return;
-		}
-		var optDetails={
-			'mobilenumber':mobielnumber,
-			'OTP':optdet
-			}
-
+	$scope.getDocList=function(optdet){
 		 var req = {
 		 method: 'POST',
 		 url: 'http://clinicapp.waghmaredd.com/patients/VerifyOTP',

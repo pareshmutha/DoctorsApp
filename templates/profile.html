@@ -6,38 +6,61 @@
 	  </ion-nav-buttons>
 	  <ion-nav-buttons side="right">
 	   <!-- Toggle left side menu -->
-	    <button class="button button-icon icon ion-edit clsMenuBtn"></button>
+	    <button class="button button-icon icon ion-edit clsMenuBtn" ng-click="editProfile()"></button>
 	  </ion-nav-buttons>
   </ion-nav-bar>
   <ion-content>
 	<div class="list clsFormList">
-	 <div class="row clsProfileheader">
-		<div class="col"><div class="clsProfileImg"></div></div>
-	   <div class="col clsProfileChangePassBtn"><a ui-sref="app.changePassword">Change Password</a></div>
-	 </div>
-	  <div class="row">
-		<div class="col">ID:</div>
-		<div class="col">ID01</div>
-	 </div>
-	 <div class="row">
-		<div class="col">First Name:</div>
-		<div class="col">Amol</div>
-	 </div>
-	  <div class="row">
-		<div class="col">Last Name:</div>
-		<div class="col">Dongare</div>
-	 </div>
-	 <div class="row">
-		<div class="col">Email:</div>
-		<div class="col">amold@gmail.com</div>
-	 </div>
-	 <div class="row">
-		<div class="col">Mobile Number:</div>
-		<div class="col">7899999999</div>
-	 </div>
+		 <div class="row clsProfileheader">
+			<div class="col"><div class="clsProfileImg"></div></div>
+		   <div class="col clsProfileChangePassBtn"><a ui-sref="app.changePassword">Change Password</a></div>
+		 </div>
+		  <div class="row">
+			<div class="col">First Name:</div>
+			<div class="col" ng-if="!showEdit">{{profile.FirstName}}<span ng-if="!profile.FirstName">NA</span></div>
+			<div class="col" ng-if="showEdit"><input type="text" ng-model="upProfile.firstname" ng-init="upProfile.firstname=profile.FirstName"></div>
+			
+		 </div>
+		  <div class="row">
+			<div class="col">Last Name:</div>
+			<div class="col">{{profile.LastName}}<span ng-if="!profile.LastName">NA</span></div>
+			<div class="col" ng-if="showEdit"><input type="text" ng-model="upProfile.lastname" ng-init="upProfile.lastname=profile.LastName"></div>
+		 </div>
+		 <div class="row">
+			<div class="col">Age:</div>
+			<div class="col">{{profile.Age}}<span ng-if="!profile.Age">NA</span></div>
+			<div class="col" ng-if="showEdit"><input type="text" ng-model="upProfile.age" ng-init="upProfile.age=profile.Age"></div>
+		 </div>
+		 <div class="row">
+			<div class="col">BloodGroup:</div>
+			<div class="col">{{profile.BloodGroup}}<span ng-if="!profile.BloodGroup">NA</span></div>
+			<div class="col" ng-if="showEdit"><input type="text" ng-model="upProfile.bloodgroup" ng-init="upProfile.bloodgroup=profile.BloodGroup"></div>
+		 </div>
+		 <div class="row">
+			<div class="col">Height:</div>
+			<div class="col">{{profile.Height}}<span ng-if="!profile.Height">NA</span></div>
+			<div class="col" ng-if="showEdit"><input type="text" ng-model="upProfile.height" ng-init="upProfile.height=profile.Height"></div>
+		 </div>
+		 <div class="row">
+			<div class="col">Weight:</div>
+			<div class="col">{{profile.Weight}}<span ng-if="!profile.Weight">NA</span></div>
+			<div class="col" ng-if="showEdit"><input type="text" ng-model="upProfile.weight" ng-init="upProfile.weight=profile.Weight"></div>
+		 </div>
+		 <div class="row">
+			<div class="col">DateOfBirth:</div>
+			<div class="col">{{profile.DateOfBirth}}<span ng-if="!profile.DateOfBirth">NA</span></div>
+			<div class="col" ng-if="showEdit"><input type="date" ng-model="upProfile.DOB"  ng-init="upProfile.DOB=profile.DateOfBirth"></div>
+		 </div>
+		 <div class="row">
+			<div class="col">Contact Number:</div>
+			<div class="col">{{profile.ContactNumber}}<span ng-if="!profile.ContactNumber">NA</span></div>
+			
+		 </div>
 	 
 	  
 	</div>
-	
+	<button class="button button-full clsSubmitBtn" ng-if="showEdit" ng-click="updateProfile(upProfile)">
+			 Update Profile
+	</button>
   </ion-content>
 </ion-view>

@@ -18,10 +18,12 @@ angular.module('patientApp')
 			 data: user
 			}
 			$http(req).then(function(res){
-				if(res.data.Message !="Login successfully"){
+				if(res.data.Message == false){
 					alert(res.data.Message);
 					return;
 				}
+				localStorage.setItem("mobilenumber", res.data.Data.UserName);
+				localStorage.setItem("patientId", res.data.Data.PatientId);
 				if(res.data.IsSaved == true && res.data.Data.IsMobileVerified==false){
 					$state.go('OTP', { 'mobilenumber':res.data.Data.UserName });
 				}

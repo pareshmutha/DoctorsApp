@@ -8,7 +8,7 @@
   <ion-content>
 	<div class="list clsFormList">
 	  <a class="item item-icon-right" ng-click="showList()">
-	    Body Part
+	    Select Doctor
 		<i class="icon ion-chevron-right"></i>
 	  </a>
 	  <a class="item item-icon-right" ng-click="showList()">
@@ -18,11 +18,11 @@
 	  </a>
 	 <label class="item item-input item-floating-label">
 		<span class="input-label">Description</span>
-		<textarea type="text" class="clsPlaceholder" placeholder="Description"></textarea>
+		<textarea type="text" ng-model="comp.description" class="clsPlaceholder" placeholder="Description"></textarea>
 	</label>
 	<label class="item item-input item-floating-label">
 		<span class="input-label">Current Medicines</span>
-		<textarea type="text" class="clsPlaceholder" placeholder="Current Medicines"></textarea>
+		<textarea type="text" ng-model="comp.currentmedicine"  class="clsPlaceholder" placeholder="Current Medicines"></textarea>
 	</label>
 	 <a class="item item-icon-right" ng-click="openFileDialog()">
 	    Add Attachments
