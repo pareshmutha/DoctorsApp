@@ -2,6 +2,7 @@ angular.module('patientApp')
 
 .controller('viewProfileCtrl', function($scope,$state,$http) {
 	$scope.showEdit=false;
+	$scope.upProfile={};
 	$scope.loadProfile=function(){
 		
 	var profileId={
@@ -23,13 +24,15 @@ angular.module('patientApp')
 	$scope.editProfile=function(){
 		$scope.showEdit=true;
 	}
-	$scope.updateProfile=function(upPro){
-		alert(upPro.lastname);
-		upPro.patientid=localStorage.getItem("patientId");
-		 var req = {
+	$scope.updateProfile=function(){
+		
+		$scope.upProfile.patientid=localStorage.getItem("patientId");
+        $scope.upProfile.image="123";
+		$scope.upProfile.language=0;
+		var req = {
 			 method: 'POST',
 			 url: 'http://clinicapp.waghmaredd.com/patients/updateprofile',
-			 data:upPro
+			 data:$scope.upProfile
 			}
 			$http(req).then(function(res){
 			   alert(res.data.Message);

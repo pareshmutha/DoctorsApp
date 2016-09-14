@@ -5,7 +5,7 @@ angular.module('patientApp')
 	 $scope.loadAppointmentList=function(){
 		try{
 			var profileId={
-				"patientId":localStorage.getItem("patientId");
+				"patientId":localStorage.getItem("patientId")
 			}
 			
 			 var req = {

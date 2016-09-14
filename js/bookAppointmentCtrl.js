@@ -1,6 +1,6 @@
 angular.module('patientApp')
 
-.controller('bookAppointmentCtrl', function($scope,$stateParams,$http,$state) {
+.controller('bookAppointmentCtrl', function($scope,$stateParams,$http,$state,$ionicHistory) {
 	
 	 $scope.showDocList = function(){
 		 var listPopup = $ionicPopup.show({
@@ -21,7 +21,7 @@ angular.module('patientApp')
 	 $scope.loadDocList=function(){
 		
 		var profileId={
-			"patientId":localStorage.getItem("patientId");
+			"patientId":localStorage.getItem("patientId")
 		}
 		var req = {
 			 method: 'POST',
@@ -31,6 +31,9 @@ angular.module('patientApp')
 			$http(req).then(function(res){
 				if(res.data.Data.length==0 || typeof res.data.Data.length == 'undefined'){
 					alert("No Doctors..");
+					$ionicHistory.nextViewOptions({
+					  disableBack: true
+					});
 					$state.go('app.viewDoctor');	
 					return;
 				}

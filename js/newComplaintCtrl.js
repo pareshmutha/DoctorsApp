@@ -1,6 +1,6 @@
 angular.module('patientApp')
 
-.controller('newComplaintCtrl', function($scope, $stateParams,$http,$state) {
+.controller('newComplaintCtrl', function($scope, $stateParams,$http,$state,$ionicHistory) {
 	$scope.checkedSymtonList={};
 	 $scope.showDocList = function(){
 		 var listPopup = $ionicPopup.show({
@@ -30,7 +30,7 @@ angular.module('patientApp')
 			 scope: $scope,
 			 buttons: [
 			   { text: 'Cancel' },
-			   { text: 'Ok' },
+			   { text: 'Ok' }
 			 ]
 		   }); 
 	 }
@@ -95,6 +95,9 @@ angular.module('patientApp')
 			$http(req).then(function(res){
 				if(res.data.Data.length==0 || typeof res.data.Data.length == 'undefined'){
 					alert("No Doctors..");
+					$ionicHistory.nextViewOptions({
+					  disableBack: true
+					});
 					$state.go('app.viewDoctor');	
 					return;
 				}
@@ -112,7 +115,7 @@ angular.module('patientApp')
 	}
 	//load list of doctors
 	$scope.loadDocList();
-	function generateCheckedSymtonlist=function(){
+	function generateCheckedSymtonlist(){
 		var array=[];
 		for(i in $scope.checkItems) {
 			console.log($scope.checkedSymtonList[i]);

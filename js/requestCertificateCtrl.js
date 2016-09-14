@@ -1,6 +1,6 @@
 angular.module('patientApp')
 
-.controller('requestCertificateCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$stateParams,$http,$state) {
+.controller('requestCertificateCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$stateParams,$http,$state,$ionicHistory) {
 	
 	 $scope.showDocList = function(){
 		 var listPopup = $ionicPopup.show({
@@ -31,6 +31,9 @@ angular.module('patientApp')
 			$http(req).then(function(res){
 				if(res.data.Data.length==0 || typeof res.data.Data.length == 'undefined'){
 					alert("No Doctors..");
+					$ionicHistory.nextViewOptions({
+					  disableBack: true
+					});
 					$state.go('app.viewDoctor');	
 					return;
 				}
