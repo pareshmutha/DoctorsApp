@@ -1,0 +1,25 @@
+<ion-view view-title="My Appointments">
+ <ion-nav-bar class="clsViewHeader">
+	  <ion-nav-buttons side="left">
+	   <!-- Toggle left side menu -->
+	    <button menu-toggle="left" class="button button-icon icon ion-navicon clsMenuBtn"></button>
+	  </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+	<div class="clsTable">
+		<div class="row">
+		  <div class="col center clsBold">Doctor</div>
+		  <div class="col center clsBold">Date</div>
+		  <div class="col center clsBold">Time</div>
+		</div>
+		<div class="row" ng-repeat="app in appointmentList">
+		  <div class="col center">{{app.DoctorName}}</div>
+		  <div class="col center">{{app.Date}}</div>
+		  <div class="col center">{{app.Time}}</div>
+		</div>
+		
+		
+	</div>
+	
+  </ion-content>
+</ion-view>

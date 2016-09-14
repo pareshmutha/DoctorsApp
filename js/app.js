@@ -153,6 +153,24 @@ $ionicConfigProvider.navBar.alignTitle('center');
       }
     }
   })
+  .state('app.bookAppointment', {
+    url: '/bookAppointment',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/bookAppointment.html',
+		controller: 'bookAppointmentCtrl'
+      }
+    }
+  })
+  .state('app.viewAppointment', {
+    url: '/viewAppointment',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/viewAppointment.html',
+		controller: 'viewAppointmentCtrl'
+      }
+    }
+  })
 .state('app.searchDoctor', {
     url: '/searchDoctor',
     views: {

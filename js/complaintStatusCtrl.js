@@ -1,6 +1,6 @@
 angular.module('patientApp')
 
-.controller('complaintStatusCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$stateParams) {
+.controller('complaintStatusCtrl', function($scope,$state,$http,$stateParams) {
 	$scope.compStatus1=$stateParams.state;
 	if($stateParams.state =="Pending"){
 		$scope.showCompDetails=false;
@@ -15,6 +15,23 @@ angular.module('patientApp')
 		{compId:"ID05",date:"22/08/2016",doctor:"Dr. Dharma",status:"Pending"},
 		{compId:"ID06",date:"22/08/2016",doctor:"Dr. Pethe",status:"Completed"},
 	];
+	$scope.loadComplaints=function(){
+			var profileId={
+			"patientid":localStorage.getItem("patientId")
+		}
+		cer.patientId=localStorage.getItem("patientId");
+		cer.doctorId=$scope.docId;
+		 var req = {
+			 method: 'POST',
+			 url: 'http://clinicapp.waghmaredd.com/patients/requestcertificate',
+			 data:cer
+			}
+			$http(req).then(function(res){
+			   alert(res.data.Message);
+			}, function(res){
+				
+			});
+	}
 	var completedArr=[];
 	$scope.selectedTab="Pending";
 	$scope.complaintStatus=function(){

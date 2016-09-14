@@ -18,7 +18,7 @@ angular.module('patientApp')
 			 data: user
 			}
 			$http(req).then(function(res){
-				if(res.data.Message == false){
+				if(res.data.IsSaved == false){
 					alert(res.data.Message);
 					return;
 				}
@@ -34,7 +34,7 @@ angular.module('patientApp')
 					$state.go('app.dashboard');	
 				}
 			}, function(res){
-				
+				alert("Some Error Occured="+res);
 			});
 			
 			

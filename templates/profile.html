@@ -23,32 +23,32 @@
 		 </div>
 		  <div class="row">
 			<div class="col">Last Name:</div>
-			<div class="col">{{profile.LastName}}<span ng-if="!profile.LastName">NA</span></div>
+			<div class="col" ng-if="!showEdit">{{profile.LastName}}<span ng-if="!profile.LastName">NA</span></div>
 			<div class="col" ng-if="showEdit"><input type="text" ng-model="upProfile.lastname" ng-init="upProfile.lastname=profile.LastName"></div>
 		 </div>
 		 <div class="row">
 			<div class="col">Age:</div>
-			<div class="col">{{profile.Age}}<span ng-if="!profile.Age">NA</span></div>
+			<div class="col" ng-if="!showEdit">{{profile.Age}}<span ng-if="!profile.Age">NA</span></div>
 			<div class="col" ng-if="showEdit"><input type="text" ng-model="upProfile.age" ng-init="upProfile.age=profile.Age"></div>
 		 </div>
 		 <div class="row">
 			<div class="col">BloodGroup:</div>
-			<div class="col">{{profile.BloodGroup}}<span ng-if="!profile.BloodGroup">NA</span></div>
+			<div class="col" ng-if="!showEdit">{{profile.BloodGroup}}<span ng-if="!profile.BloodGroup">NA</span></div>
 			<div class="col" ng-if="showEdit"><input type="text" ng-model="upProfile.bloodgroup" ng-init="upProfile.bloodgroup=profile.BloodGroup"></div>
 		 </div>
 		 <div class="row">
 			<div class="col">Height:</div>
-			<div class="col">{{profile.Height}}<span ng-if="!profile.Height">NA</span></div>
+			<div class="col" ng-if="!showEdit">{{profile.Height}}<span ng-if="!profile.Height">NA</span></div>
 			<div class="col" ng-if="showEdit"><input type="text" ng-model="upProfile.height" ng-init="upProfile.height=profile.Height"></div>
 		 </div>
 		 <div class="row">
 			<div class="col">Weight:</div>
-			<div class="col">{{profile.Weight}}<span ng-if="!profile.Weight">NA</span></div>
+			<div class="col" ng-if="!showEdit">{{profile.Weight}}<span ng-if="!profile.Weight">NA</span></div>
 			<div class="col" ng-if="showEdit"><input type="text" ng-model="upProfile.weight" ng-init="upProfile.weight=profile.Weight"></div>
 		 </div>
 		 <div class="row">
 			<div class="col">DateOfBirth:</div>
-			<div class="col">{{profile.DateOfBirth}}<span ng-if="!profile.DateOfBirth">NA</span></div>
+			<div class="col" ng-if="!showEdit">{{profile.DateOfBirth}}<span ng-if="!profile.DateOfBirth">NA</span></div>
 			<div class="col" ng-if="showEdit"><input type="date" ng-model="upProfile.DOB"  ng-init="upProfile.DOB=profile.DateOfBirth"></div>
 		 </div>
 		 <div class="row">
