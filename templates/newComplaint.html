@@ -24,11 +24,14 @@
 		<span class="input-label">Current Medicines</span>
 		<textarea type="text" ng-model="comp.currentmedicine"  class="clsPlaceholder" placeholder="Current Medicines"></textarea>
 	</label>
-	 <a class="item item-icon-right" ng-click="openFileDialog()">
-	    Add Attachments
-		<i class="icon ion-android-attach"></i>
-		<input id="file" type="file" name="file" file="file">
-	  </a>
+	   Add Attachments
+		<input id="documentFile" class="file file-loading" 
+			type="file" data-show-upload="false" data-show-caption="true" 
+			data-allowed-file-extensions='["jpeg", "jpe", "jpg","gif","png","tiff","tif","gif","bmp","pdf"]' 
+			accept="image/*" data-max-file-size="5048" 
+		/>
+
+	  
 	</div>
 	<button class="button button-full clsFormBtn" ng-click="launchComplaint(comp)">
 			 SUBMIT

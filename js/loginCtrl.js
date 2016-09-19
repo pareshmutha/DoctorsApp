@@ -3,8 +3,7 @@ angular.module('patientApp')
 .controller('loginCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$stateParams,$http,$state) {
 		$scope.inputType="password";
 		$scope.login=function(user){
-			
-			$state.go('app.profile');return;
+			$state.go('app.dashboard');	return;
 			if(typeof user == "undefined"){
 				alert("Please Enter All values!");
 				return;

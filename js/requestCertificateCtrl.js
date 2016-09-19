@@ -1,12 +1,14 @@
 angular.module('patientApp')
 
 .controller('requestCertificateCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$stateParams,$http,$state,$ionicHistory) {
-	
+	$scope.docdata = {
+		docId: 'none'
+	  };
 	 $scope.showDocList = function(){
 		 var listPopup = $ionicPopup.show({
 			 template: '<ion-list>                                '+
-					   '  <ion-radio ng-model="docId" ng-value="item.Id" ng-repeat="item in docList"> '+
-					   '    {{item}}                              '+
+					   '  <ion-radio ng-model="docdata.docId" ng-value="item.DoctorId" ng-repeat="item in docList"> '+
+					   '    {{item.DoctorName}}                              '+
 					   '  </ion-radio>                             '+
 					   '</ion-list>                               ',
 			 
@@ -51,11 +53,15 @@ angular.module('patientApp')
 	
 	
 	$scope.sendCertificateReq=function(cer){
+		if($scope.docdata.docId=="none"){
+			alert("Select Doctor..");
+			return;
+		}
 		var profileId={
 			"patientid":localStorage.getItem("patientId")
 		}
 		cer.patientId=localStorage.getItem("patientId");
-		cer.doctorId=$scope.docId;
+		cer.doctorId=$scope.docdata.docId;
 		 var req = {
 			 method: 'POST',
 			 url: 'http://clinicapp.waghmaredd.com/patients/requestcertificate',

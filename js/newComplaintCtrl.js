@@ -1,12 +1,27 @@
 angular.module('patientApp')
 
-.controller('newComplaintCtrl', function($scope, $stateParams,$http,$state,$ionicHistory) {
+.controller('newComplaintCtrl', function($scope, $stateParams,$http,$state,$ionicHistory,$ionicPopup) {
+	
+		jQuery("#documentFile").val("");
+		jQuery('#documentFile').on('fileerror', function(event, data, msg) {
+			//$scope.invalidFileInputError = true;
+		});
+
+		jQuery('#documentFile').on('filebrowse', function(event) {
+			//$scope.invalidFileInputError = false;
+		});
+	
+	
 	$scope.checkedSymtonList={};
+	$scope.docdata = {
+		docId: 'none'
+	  };
 	 $scope.showDocList = function(){
+		 try{
 		 var listPopup = $ionicPopup.show({
 			 template: '<ion-list>                                '+
-					   '  <ion-radio ng-model="docId" ng-value="item.Id" ng-repeat="item in docList"> '+
-					   '    {{item}}                              '+
+					   '  <ion-radio ng-model="docdata.docId" ng-value="item.DoctorId" ng-repeat="item in docList"> '+
+					   '    {{item.DoctorName}}                              '+
 					   '  </ion-radio>                             '+
 					   '</ion-list>                               ',
 			 
@@ -17,7 +32,9 @@ angular.module('patientApp')
 			   { text: 'Ok' },
 			 ]
 		   }); 
+		   }catch(e){alert(e)}
 	 }
+	
 	 $scope.showSympList = function(){
 		  var listPopup = $ionicPopup.show({
 			 template: '<ion-list>                                '+
@@ -35,16 +52,25 @@ angular.module('patientApp')
 		   }); 
 	 }
 	$scope.openFileDialog=function() {
-            ionic.trigger('click', { target: document.getElementById('file') });
+            ionic.trigger('click', { target: document.getElementById('documentFile') });
     };
 	
 	
 	$scope.launchComplaint=function(comp){
-		
+		var fd = new FormData();
+		var ref1=document.getElementById('documentFile').files[0];
+		if(ref1 !== null && ref1 !== undefined && ref1 !== ''){
+			fd.append('logo',ref1);
+		}
+		if($scope.docdata.docId=="none"){
+			alert("Select Doctor..");
+			return;
+		}
 		comp.patientId=localStorage.getItem("patientId");
-		comp.doctorId=$scope.docId;
+		comp.doctorId=$scope.docdata.docId;
 		comp.attachments="hello";
 		comp.symptomIdlist=generateCheckedSymtonlist();
+		
 		if(comp.symptomIdlist,length==0){
 			alert("Select Symtoms..");
 			return;
@@ -74,6 +100,8 @@ angular.module('patientApp')
 			}
 			$http(req).then(function(res){
 			  $scope.listdata=res.data.Data;
+			  alert(res.data.Data.length)
+			  
 			}, function(res){
 				alert("Some Error Occured="+res);
 			});

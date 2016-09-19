@@ -12,6 +12,7 @@
 		  <div class="col center clsBold">Date</div>
 		  <div class="col center clsBold">Time</div>
 		</div>
+		<div ng-if="!appointmentList">No Appontments</div>
 		<div class="row" ng-repeat="app in appointmentList">
 		  <div class="col center">{{app.DoctorName}}</div>
 		  <div class="col center">{{app.Date}}</div>

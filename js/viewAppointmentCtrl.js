@@ -16,7 +16,7 @@ angular.module('patientApp')
 				$http(req).then(function(res){ 
 					try{
 						  $scope.appointmentList=res.data;
-						  alert($scope.appointmentList[0].PatientName);
+						  
 					
 					}catch(e){alert("error="+e)}
 				
