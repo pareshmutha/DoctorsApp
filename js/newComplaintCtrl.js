@@ -51,17 +51,16 @@ angular.module('patientApp')
 			 ]
 		   }); 
 	 }
-	$scope.openFileDialog=function() {
-            ionic.trigger('click', { target: document.getElementById('documentFile') });
-    };
-	
-	
-	$scope.launchComplaint=function(comp){
-		var fd = new FormData();
+	$scope.uploadFile=function(){
+		alert(document.getElementById("Upload").files[0]);
+		/*var fd = new FormData();
 		var ref1=document.getElementById('documentFile').files[0];
 		if(ref1 !== null && ref1 !== undefined && ref1 !== ''){
 			fd.append('logo',ref1);
-		}
+		}*/
+	}
+
+	$scope.launchComplaint=function(comp){
 		if($scope.docdata.docId=="none"){
 			alert("Select Doctor..");
 			return;

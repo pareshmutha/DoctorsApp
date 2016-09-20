@@ -1,6 +1,6 @@
 angular.module('patientApp')
 
-.controller('bookAppointmentCtrl', function($scope,$stateParams,$http,$state,$ionicHistory) {
+.controller('bookAppointmentCtrl', function($scope,$stateParams,$http,$state,$ionicHistory,$ionicPopup) {
 	$scope.docdata = {
 		docId: 'none'
 	  };
